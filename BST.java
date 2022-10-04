@@ -84,4 +84,71 @@ class BST {
 
     } //Node
 
+    private Node root;
+    private int counter;
+
+    BST () {
+
+        this.root = null;
+        this.counter = 0;
+
+    } //Default BST Constructor
+
+    public int size () {
+
+        return this.counter;
+
+    } //size
+
+    public void insert (int element) {
+
+        //TO DO
+
+    } //insert
+
+    public void delete (int element) {
+
+        //TO DO
+
+    } //delete
+
+    public void preorder () {
+
+        //TO DO
+
+    } //preorder
+
+    public void postorder () {
+
+        //TO DO
+
+    } //postorder
+
+    public void inorder () {
+
+        //TO DO
+
+    } //inorder
+
+    private void preorderHelper (Node current) {
+
+        //TO DO
+        //We might can change the return type to something more useful
+
+    } //preorderHelper
+
+    private void postorderHelper (Node current) {
+
+        //TO DO
+        //We might can change the return type to something more useful
+
+    } //postorderHelper
+
+    private void inorderHelper (Node current) {
+
+        //TO DO
+        //We might can change the return type to something more useful
+
+    } //inorderHelper
+
 } //BST
