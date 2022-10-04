@@ -1,3 +1,3 @@
 # Project 2: BST
 
-## Jakson Hensley George Russell, and Gilad Yehudai
+## Jakson Hensley, George Russell, and Gilad Yehudai
