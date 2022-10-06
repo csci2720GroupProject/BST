@@ -102,21 +102,13 @@ class BST {
 
     public void insert (int element) {
 
-       insertRecursive(this.root, element);
+       this.root = insertRecursive(this.root, element);
 
     } //insert
 
     public void delete (int element) {
 
-        if (this.root == null) {
-
-            return; //Nothing to delete, so the easiest way to leave the method is to simply return.
-
-        } else {
-
-            //TO DO
-
-        } //if/else
+        this.root = deleteRecursive(this.root,element);
 
     } //delete
 
@@ -243,5 +235,62 @@ class BST {
         return current;
 
     } //insertRecursive
+
+    private Node deleteRecursive (Node current, int element) {
+
+        if (current == null) {
+
+            return root;
+            
+        } //if
+
+        if (element < current.getKey()) {
+
+            current.setLeftChild(deleteRecursive(current, element));
+
+        } else if (element > current.getKey()) {
+
+            current.setRightChild(deleteRecursive(current, element));
+
+        } else {
+
+            //This is where we're deleting
+            
+            //Node with only one child/no child
+            if (current.getLeftChild() == null) {
+
+                return current.getRightChild();
+
+            } else if (current.getRightChild() == null) {
+
+                return current.getLeftChild();
+
+            } //if/else if
+
+            //Node with 2 children
+            current.setKey(minValue(current.getRightChild()));
+
+            current.setRightChild(deleteRecursive(current.getRightChild(), current.getKey()));
+
+        } //if/else if/else
+
+        return current;
+
+    } //deleteRecursive
+
+    private int minValue (Node current) {
+
+        int min = current.getKey();
+
+        while (current.getLeftChild() != null) {
+
+            min = current.getLeftChild().getKey();
+            current = current.getLeftChild();
+
+        } //while
+
+        return min;
+
+    } //minValue
 
 } //BST
