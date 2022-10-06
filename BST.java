@@ -104,9 +104,8 @@ class BST {
 
         if (this.root == null) {
 
-            Node node = new Node();
-            node.setKey(element);
-            this.root = node;
+            this.root  = new Node();
+            this.root.setKey(element);
             this.counter++;
 
         } else {
