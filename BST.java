@@ -177,19 +177,25 @@ class BST {
 
     public void preorder () {
 
+        System.out.println("Preorder Traversal"); //title
         preorderHelper(root);
+        System.out.println(); //new line
 
     } //preorder
 
     public void postorder () {
 
+        System.out.println("Postorder Traversal"); //title
         postorderHelper(root);
+        System.out.println(); //new line
 
     } //postorder
 
     public void inorder () {
 
+        System.out.println("Inorder Traversal"); //title
         inorderHelper(root);
+        System.out.println(); //new line
 
     } //inorder
 
@@ -201,7 +207,25 @@ class BST {
 
     private void postorderHelper (Node current) {
 
-        //TO DO
+        if (current == null) {
+
+            return; //empty list
+
+        } //if
+
+        if (current.getLeftChild() != null) {
+
+            postorderHelper(current); //traverse left
+
+        } //if
+
+        if (current.getRightChild() != null) {
+
+            postorderHelper(current); //traverse right
+
+        } //if
+
+        System.out.print(current.getKey() + " "); //print value
 
     } //postorderHelper
 
@@ -219,15 +243,15 @@ class BST {
 
         } //if
 
-        System.out.print(current.getKey() + " ");
+        System.out.print(current.getKey() + " "); //print value
 
         if (current.getRightChild() != null) {
 
-            inorderHelper(current);
+            inorderHelper(current); //traverse right
 
         } //if
 
-        System.out.print(current.getKey() + " ");
+        System.out.print(current.getKey() + " "); //print value
 
     } //inorderHelper
 
