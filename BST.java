@@ -268,7 +268,7 @@ class BST {
             } //if/else if
 
             //Node with 2 children
-            current.setKey(minValue(current.getRightChild()));
+            current.setKey(minimum(current.getRightChild()));
 
             current.setRightChild(deleteRecursive(current.getRightChild(), current.getKey()));
 
@@ -278,7 +278,7 @@ class BST {
 
     } //deleteRecursive
 
-    private int minValue (Node current) {
+    private int minimum (Node current) {
 
         int min = current.getKey();
 
@@ -291,6 +291,6 @@ class BST {
 
         return min;
 
-    } //minValue
+    } //minumim
 
 } //BST
