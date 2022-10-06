@@ -246,11 +246,11 @@ class BST {
 
         if (element < current.getKey()) {
 
-            current.setLeftChild(deleteRecursive(current, element));
+            current.setLeftChild(deleteRecursive(current.getLeftChild(), element));
 
         } else if (element > current.getKey()) {
 
-            current.setRightChild(deleteRecursive(current, element));
+            current.setRightChild(deleteRecursive(current.getRightChild(), element));
 
         } else {
 
@@ -320,7 +320,7 @@ class BST {
         tree.postorder();
 
         //tree.delete(8);
-       // tree.delete(4);
+      //  tree.delete(4);
        // tree.delete(6);
 
         tree.postorder();
