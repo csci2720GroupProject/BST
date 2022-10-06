@@ -102,10 +102,20 @@ class BST {
 
     public void insert (int element) {
 
-        //TO DO
+        if (this.counter == 0) {
+
+            Node node = new Node();
+            node.setKey(element);
+            this.root = node;
+
+        } else {
+
+            
+
+        } //if/else
 
     } //insert
-
+)
     public void delete (int element) {
 
         //TO DO
