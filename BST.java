@@ -313,7 +313,7 @@ class BST {
         tree.insert(3);
         tree.insert(6);
         tree.insert(0);
-        tree.insert(-1);
+        //tree.insert(-1);
 
         tree.preorder();
         tree.inorder();
