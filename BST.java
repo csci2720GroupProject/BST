@@ -102,61 +102,7 @@ class BST {
 
     public void insert (int element) {
 
-        if (this.root == null) {
-
-            this.root  = new Node();
-            this.root.setKey(element);
-            this.counter++;
-
-        } else {
-
-            Node node = new Node();
-            node.setKey(element);
-
-            //This chunk (temp + while loop) traverses the bst to get to the end in the place that the node should go
-            Node temp = this.root; //Node for traversing
-            while (temp.getLeftChild() != null && temp.getRightChild() != null) {
-
-                if (temp.getKey() > element) {
-
-                    temp = temp.getLeftChild();
-
-                } else if (temp.getKey() < element) {
-
-                    temp = temp.getRightChild();
-
-                } else {
-
-                    //if we get here then the value we're inserting is equal to the value of the node
-
-                } //if/else if/else
-
-            } //while
-
-            if (temp.getKey() > element) {
-
-                temp.setLeftChild(node);
-
-            } else if (temp.getKey() < element) {
-
-               temp.setRightChild(node);
-
-            } else {
-
-                //if we get here then the value we're inserting is equal to the value of the node
-
-            } //if/else if/else
-
-        } //if/else
-
-        /**
-         * Current problems with this:
-         * 
-         * 1. If one child node is null and the other isn't I think something bad will happen
-         * 2. What do we do if the new value is equal to an existing value
-         * 3. Do we need to balance the tree? If so we'll need to add in that logic
-         * 
-         * */
+       insertRecursive(this.root, element);
 
     } //insert
 
@@ -269,5 +215,33 @@ class BST {
         } //if
 
     } //inorderHelper
+
+    private Node insertRecursive (Node current, int element) {
+
+        if (current == null) {
+
+            current  = new Node();
+            current.setKey(element);
+            this.counter++;
+
+            return current;
+
+        } else if (element < current.getKey()){
+
+            current.setLeftChild(insertRecursive(current, element));
+            
+        } else if (element > current.getKey()){
+
+            current.setRightChild(insertRecursive(current, element));
+            
+        } else {
+
+            System.out.println("Element is already in the tree!"); //Found a duplicate value
+
+        } //if/else if/else if/else
+
+        return current;
+
+    } //insertRecursive
 
 } //BST
