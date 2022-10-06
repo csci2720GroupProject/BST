@@ -148,13 +148,13 @@ class BST {
 
         if (current.getLeftChild() != null) {
 
-            preorderHelper(current); //traverse left
+            preorderHelper(current.getLeftChild()); //traverse left
 
         } //if
 
         if (current.getRightChild() != null) {
 
-            preorderHelper(current); //traverse right
+            preorderHelper(current.getRightChild()); //traverse right
 
         } //if
         
@@ -170,13 +170,13 @@ class BST {
 
         if (current.getLeftChild() != null) {
 
-            postorderHelper(current); //traverse left
+            postorderHelper(current.getLeftChild()); //traverse left
 
         } //if
 
         if (current.getRightChild() != null) {
 
-            postorderHelper(current); //traverse right
+            postorderHelper(current.getRightChild()); //traverse right
 
         } //if
 
@@ -194,7 +194,7 @@ class BST {
 
         if (current.getLeftChild() != null) {
 
-            inorderHelper(current); //traverse left
+            inorderHelper(current.getLeftChild()); //traverse left
 
         } //if
 
@@ -202,7 +202,7 @@ class BST {
 
         if (current.getRightChild() != null) {
 
-            inorderHelper(current); //traverse right
+            inorderHelper(current.getRightChild()); //traverse right
 
         } //if
 
@@ -220,11 +220,11 @@ class BST {
 
         } else if (element < current.getKey()){
 
-            current.setLeftChild(insertRecursive(current, element));
+            current.setLeftChild(insertRecursive(current.getLeftChild(), element));
             
         } else if (element > current.getKey()){
 
-            current.setRightChild(insertRecursive(current, element));
+            current.setRightChild(insertRecursive(current.getRightChild(), element));
             
         } else {
 
@@ -319,9 +319,9 @@ class BST {
         tree.inorder();
         tree.postorder();
 
-        tree.delete(8);
-        tree.delete(4);
-        tree.delete(6);
+        //tree.delete(8);
+       // tree.delete(4);
+       // tree.delete(6);
 
         tree.postorder();
 
