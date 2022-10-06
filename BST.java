@@ -177,40 +177,57 @@ class BST {
 
     public void preorder () {
 
-        //TO DO
+        preorderHelper(root);
 
     } //preorder
 
     public void postorder () {
 
-        //TO DO
+        postorderHelper(root);
 
     } //postorder
 
     public void inorder () {
 
-        //TO DO
+        inorderHelper(root);
 
     } //inorder
 
     private void preorderHelper (Node current) {
 
         //TO DO
-        //We might can change the return type to something more useful
-
+        
     } //preorderHelper
 
     private void postorderHelper (Node current) {
 
         //TO DO
-        //We might can change the return type to something more useful
 
     } //postorderHelper
 
     private void inorderHelper (Node current) {
 
-        //TO DO
-        //We might can change the return type to something more useful
+        if (current == null) {
+
+            return; //empty list
+
+        } //if
+
+        if (current.getLeftChild() != null) {
+
+            inorderHelper(current); //traverse left
+
+        } //if
+
+        System.out.print(current.getKey() + " ");
+
+        if (current.getRightChild() != null) {
+
+            inorderHelper(current);
+
+        } //if
+
+        System.out.print(current.getKey() + " ");
 
     } //inorderHelper
 
