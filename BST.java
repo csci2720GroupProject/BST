@@ -102,7 +102,7 @@ class BST {
 
     public void insert (int element) {
 
-        if (this.counter == 0) {
+        if (this.root == null) {
 
             Node node = new Node();
             node.setKey(element);
@@ -163,7 +163,7 @@ class BST {
 
     public void delete (int element) {
 
-        if (this.counter == 0) {
+        if (this.root == null) {
 
             return; //Nothing to delete, so the easiest way to leave the method is to simply return.
 
@@ -201,7 +201,25 @@ class BST {
 
     private void preorderHelper (Node current) {
 
-        //TO DO
+        if (current == null) {
+
+            return; //empty list
+
+        } //if
+
+        System.out.print(current.getKey() + " "); //print value
+
+        if (current.getLeftChild() != null) {
+
+            preorderHelper(current); //traverse left
+
+        } //if
+
+        if (current.getRightChild() != null) {
+
+            preorderHelper(current); //traverse right
+
+        } //if
         
     } //preorderHelper
 
@@ -250,8 +268,6 @@ class BST {
             inorderHelper(current); //traverse right
 
         } //if
-
-        System.out.print(current.getKey() + " "); //print value
 
     } //inorderHelper
 
