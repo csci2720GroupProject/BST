@@ -107,18 +107,27 @@ class BST {
             Node node = new Node();
             node.setKey(element);
             this.root = node;
+            this.counter++;
 
         } else {
 
-            
+            //TO DO
 
         } //if/else
 
     } //insert
-)
+
     public void delete (int element) {
 
-        //TO DO
+        if (this.counter == 0) {
+
+            return; //Nothing to delete, so the easiest way to leave the method is to simply return.
+
+        } else {
+
+            //TO DO
+
+        } //if/else
 
     } //delete
 
