@@ -108,7 +108,7 @@ class BST {
 
     public void delete (int element) {
 
-        this.root = deleteRecursive(this.root,element);
+        this.root = deleteRecursive(this.root, element);
 
     } //delete
 
@@ -140,6 +140,7 @@ class BST {
 
         if (current == null) {
 
+            System.out.println("The list is empty");
             return; //empty list
 
         } //if
@@ -164,6 +165,7 @@ class BST {
 
         if (current == null) {
 
+            System.out.println("The list is empty");
             return; //empty list
 
         } //if
@@ -188,6 +190,7 @@ class BST {
 
         if (current == null) {
 
+            System.out.println("The list is empty");
             return; //empty list
 
         } //if
@@ -240,7 +243,7 @@ class BST {
 
         if (current == null) {
 
-            return root;
+            return current;
             
         } //if
 
@@ -293,6 +296,13 @@ class BST {
 
     } //minumim
 
+    public void clear() {
+
+        this.root = null;
+        this.counter = 0;
+
+    } //clear
+
     public static void main (String[] args) {
 
         BST tree = new BST();
@@ -313,16 +323,54 @@ class BST {
         tree.insert(3);
         tree.insert(6);
         tree.insert(0);
-        //tree.insert(-1);
+        tree.insert(-1);
 
         tree.preorder();
         tree.inorder();
         tree.postorder();
 
-        //tree.delete(8);
-      //  tree.delete(4);
-       // tree.delete(6);
+        tree.delete(8);
+        tree.delete(4);
+        tree.delete(6);
 
+        tree.postorder();
+        tree.preorder();
+
+        tree.clear();
+
+        tree.preorder();
+        tree.inorder();
+        tree.postorder();
+
+        tree.insert(5);
+
+        tree.preorder();
+        tree.inorder();
+        tree.postorder();
+
+        tree.insert(3);
+        tree.insert(4);
+        tree.insert(1);
+        tree.insert(399);
+        tree.insert(8);
+        tree.insert(0);
+        tree.insert(999999999);
+        tree.insert(5);
+        tree.insert(6);
+        tree.insert(7);
+        tree.insert(5);
+        tree.insert(9);
+        tree.insert(3);
+        tree.insert(3);
+        tree.insert(3456);
+        tree.insert(2);
+        tree.insert(3);
+        tree.insert(5678);
+        tree.insert(43);
+        tree.insert(1);
+
+        tree.preorder();
+        tree.inorder();
         tree.postorder();
 
     } //main
