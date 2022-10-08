@@ -323,7 +323,7 @@ class BST {
       //  tree.delete(4);
        // tree.delete(6);
 
-        tree.postorder();
+       // tree.postorder();
 
     } //main
 
