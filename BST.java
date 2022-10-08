@@ -307,10 +307,15 @@ class BST {
 
         BST tree = new BST();
 
+        System.out.println("Current size of list: " + tree.size());
         tree.insert(1);
+        System.out.println("Current size of list: " + tree.size());
+
         tree.preorder();
 
         tree.delete(1);
+        System.out.println("Current size of list: " + tree.size());
+
         tree.postorder();
 
         tree.insert(4);
@@ -324,6 +329,8 @@ class BST {
         tree.insert(6);
         tree.insert(0);
         tree.insert(-1);
+        System.out.println("Current size of list: " + tree.size());
+
 
         tree.preorder();
         tree.inorder();
@@ -334,12 +341,16 @@ class BST {
         tree.delete(3);
         tree.delete(6);
         tree.delete(0);
+        System.out.println("Current size of list: " + tree.size());
+
 
         tree.preorder();
         tree.inorder();
         tree.postorder();
 
         tree.clear();
+        System.out.println("Current size of list: " + tree.size());
+
 
         tree.preorder();
         tree.inorder();
@@ -371,6 +382,8 @@ class BST {
         tree.insert(5678);
         tree.insert(43);
         tree.insert(1);
+        System.out.println("Current size of list: " + tree.size());
+
 
         tree.preorder();
         tree.inorder();
