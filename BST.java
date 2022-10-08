@@ -329,6 +329,28 @@ class BST {
         tree.inorder();
         tree.postorder();
 
+        tree.delete(5);
+        tree.delete(4);
+        tree.delete(3);
+        tree.delete(6);
+        tree.delete(0);
+
+        tree.preorder();
+        tree.inorder();
+        tree.postorder();
+
+        tree.clear();
+
+        tree.preorder();
+        tree.inorder();
+        tree.postorder();
+
+        tree.delete(0);
+
+        tree.preorder();
+        tree.inorder();
+        tree.postorder();
+
         tree.insert(3);
         tree.insert(4);
         tree.insert(1);
