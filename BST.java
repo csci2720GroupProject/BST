@@ -505,5 +505,3 @@ class BST {
     } //main
 
 } //BST
-
-//test
