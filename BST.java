@@ -262,10 +262,12 @@ class BST {
             //Node with only one child/no child
             if (current.getLeftChild() == null) {
 
+                this.counter--;
                 return current.getRightChild();
 
             } else if (current.getRightChild() == null) {
 
+                this.counter--;
                 return current.getLeftChild();
 
             } //if/else if
@@ -305,89 +307,200 @@ class BST {
 
     public static void main (String[] args) {
 
+        System.out.println("Our Own Cases Below");
+        System.out.println("-------------------");
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        BST oldTree = new BST();
+
+        System.out.println("Current size of list: " + oldTree.size());
+        oldTree.insert(1);
+        System.out.println("Current size of list: " + oldTree.size());
+
+        oldTree.preorder();
+
+        oldTree.delete(1);
+        System.out.println("Current size of list: " + oldTree.size());
+
+        oldTree.postorder();
+
+        oldTree.insert(4);
+        oldTree.insert(4);
+        oldTree.insert(5);
+        oldTree.insert(7);
+        oldTree.insert(1);
+        oldTree.insert(9);
+        oldTree.insert(2);
+        oldTree.insert(3);
+        oldTree.insert(6);
+        oldTree.insert(0);
+        oldTree.insert(-1);
+        System.out.println("Current size of list: " + oldTree.size());
+
+
+        oldTree.preorder();
+        oldTree.inorder();
+        oldTree.postorder();
+
+        oldTree.delete(5);
+        oldTree.delete(4);
+        oldTree.delete(3);
+        oldTree.delete(6);
+        oldTree.delete(0);
+        System.out.println("Current size of list: " + oldTree.size());
+
+
+        oldTree.preorder();
+        oldTree.inorder();
+        oldTree.postorder();
+
+        oldTree.clear();
+        System.out.println("Current size of list: " + oldTree.size());
+
+
+        oldTree.preorder();
+        oldTree.inorder();
+        oldTree.postorder();
+
+        oldTree.delete(0);
+
+        oldTree.preorder();
+        oldTree.inorder();
+        oldTree.postorder();
+
+        oldTree.insert(3);
+        oldTree.insert(4);
+        oldTree.insert(1);
+        oldTree.insert(399);
+        oldTree.insert(8);
+        oldTree.insert(0);
+        oldTree.insert(999999999);
+        oldTree.insert(5);
+        oldTree.insert(6);
+        oldTree.insert(7);
+        oldTree.insert(5);
+        oldTree.insert(9);
+        oldTree.insert(3);
+        oldTree.insert(3);
+        oldTree.insert(3456);
+        oldTree.insert(2);
+        oldTree.insert(3);
+        oldTree.insert(5678);
+        oldTree.insert(43);
+        oldTree.insert(1);
+        System.out.println("Current size of list: " + oldTree.size());
+
+
+        oldTree.preorder();
+        oldTree.inorder();
+        oldTree.postorder();
+
+
+
+
+        //Provided test cases
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("Provided Test Cases Below");
+        System.out.println("-------------------------");
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+
         BST tree = new BST();
 
-        System.out.println("Current size of list: " + tree.size());
+        tree.insert(4);
+
+        tree.insert(5);
+
+        tree.insert(2);
+
+        tree.insert(9);
+
+        tree.insert(6);
+
+        tree.insert(11);
+
+        tree.insert(10);
+
+        tree.insert(8);
+
         tree.insert(1);
-        System.out.println("Current size of list: " + tree.size());
+
+        tree.insert(14);
+
+        System.out.println("Example 1: preorder traversal");
+
+        System.out.println("Expected:\t" + "4 2 1 5 9 6 8 11 10 14");
+
+        System.out.print("Your Tree:\t");
 
         tree.preorder();
+
+        System.out.println("\nExample 2: postorder traversal");
+
+        System.out.println("Expected:\t" + "1 2 8 6 10 14 11 9 5 4");
+
+        System.out.print("Your Tree:\t");
+
+        tree.postorder();
+
+        System.out.println("\nExample 3: inorder traversal");
+
+        System.out.println("Expected:\t" + "1 2 4 5 6 8 9 10 11 14");
+
+        System.out.print("Your Tree:\t");
+
+        tree.inorder();
 
         tree.delete(1);
-        System.out.println("Current size of list: " + tree.size());
 
-        tree.postorder();
+        System.out.println("\nExample 4: preorder traversal after a deleting a "
 
-        tree.insert(4);
-        tree.insert(4);
-        tree.insert(5);
-        tree.insert(7);
-        tree.insert(1);
-        tree.insert(9);
-        tree.insert(2);
-        tree.insert(3);
-        tree.insert(6);
-        tree.insert(0);
-        tree.insert(-1);
-        System.out.println("Current size of list: " + tree.size());
+                           + "leaf");
 
+        System.out.println("Expected:\t" + "4 2 5 9 6 8 11 10 14");
+
+        System.out.print("Your Tree:\t");
 
         tree.preorder();
-        tree.inorder();
-        tree.postorder();
 
-        tree.delete(5);
-        tree.delete(4);
-        tree.delete(3);
         tree.delete(6);
-        tree.delete(0);
-        System.out.println("Current size of list: " + tree.size());
 
+        System.out.println("\nExample 5: preorder traversal after a deleting a "
 
-        tree.preorder();
-        tree.inorder();
-        tree.postorder();
+                           + "node with one child");
 
-        tree.clear();
-        System.out.println("Current size of list: " + tree.size());
+        System.out.println("Expected:\t" + "4 2 5 9 8 11 10 14");
 
+        System.out.print("Your Tree:\t");
 
         tree.preorder();
-        tree.inorder();
-        tree.postorder();
 
-        tree.delete(0);
+        tree.delete(9);
 
-        tree.preorder();
-        tree.inorder();
-        tree.postorder();
+        System.out.println("\nExample 6: preorder traversal after a deleting a "
 
-        tree.insert(3);
-        tree.insert(4);
-        tree.insert(1);
-        tree.insert(399);
-        tree.insert(8);
-        tree.insert(0);
-        tree.insert(999999999);
-        tree.insert(5);
-        tree.insert(6);
-        tree.insert(7);
-        tree.insert(5);
-        tree.insert(9);
-        tree.insert(3);
-        tree.insert(3);
-        tree.insert(3456);
-        tree.insert(2);
-        tree.insert(3);
-        tree.insert(5678);
-        tree.insert(43);
-        tree.insert(1);
-        System.out.println("Current size of list: " + tree.size());
+                           + "node with two children");
 
+        System.out.println("Expected:\t" + "4 2 5 8 11 10 14");
+
+        System.out.print("Your Tree:\t");
 
         tree.preorder();
-        tree.inorder();
-        tree.postorder();
+
+        System.out.println("\nExample 7: size of the tree after insertions and "
+
+                           + "deletions");
+
+        System.out.println("Expected:\t" + "7");
+
+        System.out.println("Your Tree:\t" + tree.size());
 
     } //main
 
