@@ -114,7 +114,7 @@ class BST {
 
     public void preorder () {
 
-        System.out.println("Preorder Traversal"); //title
+        System.out.print("Preorder Traversal: "); //title
         preorderHelper(root);
         System.out.println(); //new line
 
@@ -122,7 +122,7 @@ class BST {
 
     public void postorder () {
 
-        System.out.println("Postorder Traversal"); //title
+        System.out.print("Postorder Traversal: "); //title
         postorderHelper(root);
         System.out.println(); //new line
 
@@ -130,7 +130,7 @@ class BST {
 
     public void inorder () {
 
-        System.out.println("Inorder Traversal"); //title
+        System.out.print("Inorder Traversal: "); //title
         inorderHelper(root);
         System.out.println(); //new line
 
@@ -273,9 +273,9 @@ class BST {
             } //if/else if
 
             //Node with 2 children
-            current.setKey(minimum(current.getRightChild()));
+            current.setKey(maximum(current.getLeftChild()));
 
-            current.setRightChild(deleteRecursive(current.getRightChild(), current.getKey()));
+            current.setLeftChild(deleteRecursive(current.getLeftChild(), current.getKey()));
 
         } //if/else if/else
 
@@ -298,6 +298,21 @@ class BST {
 
     } //minumim
 
+    private int maximum (Node current) {
+
+        int max = current.getKey();
+
+        while (current.getRightChild() != null) {
+
+            max = current.getRightChild().getKey();
+            current = current.getRightChild();
+
+        } //while
+
+        return max;
+
+    } //minumim
+
     public void clear() {
 
         this.root = null;
@@ -305,8 +320,9 @@ class BST {
 
     } //clear
 
+    
     public static void main (String[] args) {
-
+/* 
         System.out.println("Our Own Cases Below");
         System.out.println("-------------------");
         System.out.println();
@@ -396,20 +412,12 @@ class BST {
         oldTree.preorder();
         oldTree.inorder();
         oldTree.postorder();
-
-
-
+*/
 
         //Provided test cases
 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("Provided Test Cases Below");
-        System.out.println("-------------------------");
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("\n\n\nProvided Test Cases Below");
+        System.out.println("-------------------------\n\n\n");
 
 
         BST tree = new BST();
@@ -433,6 +441,7 @@ class BST {
         tree.insert(1);
 
         tree.insert(14);
+
 
         System.out.println("Example 1: preorder traversal");
 
@@ -500,7 +509,7 @@ class BST {
 
         System.out.println("Expected:\t" + "7");
 
-        System.out.println("Your Tree:\t" + tree.size());
+        System.out.println("Your Tree:\t" + tree.size()); 
 
     } //main
 
